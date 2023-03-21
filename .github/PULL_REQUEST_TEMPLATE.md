@@ -5,5 +5,3 @@
 1. Done
 
 #### Screenshots in case of UI changes
-
-
