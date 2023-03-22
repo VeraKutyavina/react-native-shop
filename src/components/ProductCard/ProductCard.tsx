@@ -5,12 +5,13 @@ import ProductStore from '@src/store/productStore';
 import CartStore from '@src/store/cartStore';
 import FavoriteStore from '@src/store/favoriteStore';
 
+import { Icon } from 'react-native-elements';
 import { Image, View, Text, TouchableOpacity } from 'react-native';
 import Header from '../Header';
 
 import { styles } from './styled';
 
-// const rating = [1, 2, 3, 4, 5];
+const rating = [1, 2, 3, 4, 5];
 
 type TProductCard = {
   navigation: any;
@@ -46,21 +47,22 @@ const ProductCard = ({ navigation, route }: TProductCard) => {
         <Text style={styles.price}> {product.price} руб. </Text>
         <Text style={styles.description}> {product.description} </Text>
         <View style={styles.rating}>
-          {/*{rating.map(i => (*/}
-          {/*  <AntDesign*/}
-          {/*    key={i}*/}
-          {/*    name={i <= product.rating ? 'star' : 'staro'}*/}
-          {/*    size={28}*/}
-          {/*    color="black"*/}
-          {/*  />*/}
-          {/*))}*/}
+          {rating.map(i => (
+            <Icon
+              key={i}
+              size={28}
+              name={i <= product.rating ? 'star' : 'staro'}
+              color="black"
+              type="antdesign"
+            />
+          ))}
           {product.isFavorite ? (
             <TouchableOpacity onPress={removeFromFavorites}>
-              {/*<AntDesign style={{ marginLeft: 24 }} name="heart" size={24} color="black" />*/}
+              <Icon style={styles.icon} size={28} name="heart" color="black" type="antdesign" />
             </TouchableOpacity>
           ) : (
             <TouchableOpacity onPress={addToFavorites}>
-              {/*<AntDesign style={{ marginLeft: 24 }} name="hearto" size={24} color="black" />*/}
+              <Icon style={styles.icon} size={28} name="hearto" color="black" type="antdesign" />
             </TouchableOpacity>
           )}
         </View>

@@ -50,4 +50,7 @@ export const styles = StyleSheet.create({
   warning: {
     marginTop: 16,
   },
+  icon: {
+    marginLeft: 24,
+  },
 });
