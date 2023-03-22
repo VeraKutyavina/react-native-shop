@@ -1,23 +1,22 @@
 import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { Text, View } from 'react-native';
+
+import ProductList from '@src/components/ProductList';
+import ProductCard from '@src/components/ProductCard';
+import Cart from '@src/components/Cart';
+import Favorite from '@src/components/Favorite';
 
 const Stack = createNativeStackNavigator();
-
-function HomeScreen() {
-  return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Text>Home Screen</Text>
-    </View>
-  );
-}
 
 function App(): JSX.Element {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        <Stack.Screen name="Home" component={HomeScreen} />
+        <Stack.Screen name="Home">{props => <ProductList {...props} />}</Stack.Screen>
+        <Stack.Screen name="ProductCard">{props => <ProductCard {...props} />}</Stack.Screen>
+        <Stack.Screen name="Cart">{props => <Cart {...props} />}</Stack.Screen>
+        <Stack.Screen name="Favorite">{props => <Favorite {...props} />}</Stack.Screen>
       </Stack.Navigator>
     </NavigationContainer>
   );
