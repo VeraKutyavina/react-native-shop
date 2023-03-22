@@ -17,7 +17,7 @@ type TCart = {
 const Cart = ({}: TCart) => {
   const products = CartStore.cart;
   const totalPrice = useMemo(
-    () => products.reduce((obj, item, i) => obj + item.price * item.inCart, 0),
+    () => products.reduce((obj, item) => obj + item.price * item.inCart, 0),
     [products],
   );
 

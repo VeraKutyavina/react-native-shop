@@ -9,18 +9,18 @@ export const styles = StyleSheet.create({
   },
   img: {
     maxWidth: 170,
-    maxHeight: 280
+    maxHeight: 280,
   },
   productWrapper: {
     marginRight: 10,
     marginBottom: 10,
-    alignItems: "center",
+    alignItems: 'center',
   },
   name: {
-    fontWeight: "bold",
+    fontWeight: 'bold',
     marginVertical: 4,
   },
   price: {
     color: '#b40808',
-  }
+  },
 });
